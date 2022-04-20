@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cakes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Bootstrap CSS -->
+ 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<!-- Формат номера телефона для формы обратного звонка-->
+	<script src="js/bootstrap-formhelpers.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-formhelpers.min.css" rel="stylesheet" media="screen">
+
+
+<!-- Swiper CSS -->
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+<!-- WOW animate CSS -->
+	<link rel="stylesheet" href="css/animate.css">
+<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+<!-- Map -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+<!-- SmartBasket -->
+	<link rel="stylesheet" href="./css/smartbasket.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/all.css">   
+ <!-- Fonts --> 
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Rokkitt&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption:400,700" rel="stylesheet"> 
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+<!--......FIXED-TOP TEL......-->
+<div class="container">
+		<section id="mobphone" class="mobphone fixed-top">
+			<div class="row text-center">
+				<div class="col-12">
+					<a class="nav-link d-lg-none align-self-center" id="tel-header" href="tel:+380448558535">
+					<img src="img/header/tel.svg" class="align-self-center" alt="img">+ 38 (044) 855-85-35
+				</a>
+				</div>
+			</div>
+	</section>
+</div>
+<!--......HEADER......-->
+	<header class="header">
+		<div class="container">
+<!--......HEADER NAV......-->	
+	<nav class="row navbar navbar-expand-lg navbar-light d-flex">
+	  <a class="navbar-brand justify-content-center" href="#">
+	  	<img src="img/header/logo.svg" alt="logo">
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Переключатель навигации">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+	    <ul class="navbar-nav">
+	      <li class="nav-item ml-30 align-self-center">
+	        <a class="nav-link" href="#">Каталог</a>
+	      </li>
+	      <li class="nav-item ml-30 align-self-center">
+		    <a class="nav-link" href="#">Интересно</a>
+		  </li>	
+		      <li class="nav-item ml-30 align-self-center d-lg-none d-xl-block">
+		        <a class="nav-link" href="#">Рецепты</a>
+		      </li>	
+		      <li class="nav-item ml-30 align-self-center">
+		        <a class="nav-link" href="#">Оплата и доставка</a>
+		      </li>	
+		      <li class="nav-item ml-30 align-self-center">
+		        <a class="nav-link" href="#">Отзывы</a>
+		      </li>
+		      <li class="nav-item ml-30 align-self-center">			
+				<a class="nav-link" id="tel" href="#"><img src="img/header/tel.svg" alt="img">+ 38 (044) 855-85-35</a>	
+			</li>			
+	    </ul>
+	  </div>
+	</nav>
+<!--......HEADER titles......-->
+<div class="row">
+	<div class="col-md-5 col-xs-12">
+		<div class="header__subtitle">Пекарня ручной работы</div>
+		<h1 class="header__title">Вкуснейшие тортuки</h1>	
+		<div class="header__slogan">Наши тортики ручной работы приносят радость и улыбки в каждый дом, при любых ситуациях!</div>
+		<a class="button button_theme_header" href="#">Побаловать себя</a>	
+	</div>
+	<div class="col-md-7 col-xs-12">
+		<div class="header__img">
+			<img src="img/header/img_cake.png"  alt="img">
+		</div>
+	</div>
+</div>
+</div>		
+</header>
+
+<!--......MAIN......-->
+<main>
+<!--   MODAL WINDOW (FORM) при нажатии на заказать звонок -->	
+
+	<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="container">	
+			<div class="row modal-form" style="border-radius: 10px;">
+				<div class="col-7 d-flex justify-content-center call_girl">
+					<img src="img/modal/call_girl.png" class="d-none d-xl-block" alt="play">
+				</div>
+				<div class="col-xl-5 col-xs-12 modal-form-content">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="form">
+								<form method="post" id="feedback-form3">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true" style="color: white; position: absolute; right: 5px; top: -118px; font-size: 30px; background: #FFA800; padding: 10px 15px 10px 15px; border-radius: 0px 10px 0px 0px; margin: 90px -5px 0px 0px;">&times;</span>
+									</button>
+									<p class="form__text1"><span>Давайте <br>созвонимся!</span></span></p>
+									<p class="form__text2">Оставьте свой номер телефона и мы перезвоним в течение 3 минут!</p>
+									<div class="form-group">
+										<input type="text" name="nameFF" class="form-control is-valid i-name" placeholder="Представьтесь, пожалуйста" autocomplete="off">
+									</div>
+									<div class="form-group">
+										<input type="text" name="mobFF" class="bfh-phone form-control is-valid i-mob" pattern="^\+38 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}" data-format="+38 (ddd) ddd-dd-dd" data-number="15555555555" required>
+									</div>
+									<div class="form-group checkbox"> 
+										<input type="checkbox" id="accept" name="accept" required value="accept" checked="checked">
+										<label for="accept">Я принимаю условия <a  class="accept-rules" href="#">передачи информации</a></label><br>
+									</div>
+									<div class="form-group form-group-button">
+										<button class="btn btn-primary btn-block form-btn zakazmx1" name="submit" value="Submit" type="submit">Перезвонить мне</button>
+									</div>
+								</form>
+							  <script>
+										document.getElementById('feedback-form3').addEventListener('submit', function(evt){
+										  var http = new XMLHttpRequest(), f = this;
+										  evt.preventDefault();
+										  http.open("POST", "contacts.php", true);
+										  http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+										  http.send("nameFF=" + f.nameFF.value + "&mobFF=" + f.mobFF.value);
+										  http.onreadystatechange = function() {
+											if (http.readyState == 4 && http.status == 200) {
+											  alert(http.responseText + ', Ваша заявка отправлена.\nМы свяжемся с Вами в ближайшее время!');    
+											  f.messageFF.removeAttribute('value'); // очистить поле сообщения (две строки)
+											  f.messageFF.value='';
+											}
+										  }
+										  http.onerror = function() {
+											alert('Извините, данные не были переданы');
+										  }
+										}, false);
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+		 </div>		
+	</div>
+</div>
+</div>		
+<!--......PRODUCTS......-->
+<div class="container-wide-products">	
+		<img src="img/" class="img-fluid paper-header-products" alt="">
+</div>
+	<div class="container">
+		<section class="products" id="products">		
+					<h3 class="products__title">Ням-нямки</h3>
+					<p class="products__slogan">Наши сладости приносят радость и эмоции на весь день! <br>Используем только качественные продукты.</p> 	
+
+<!--......PRODUCTS pills......-->				
+			<div class="row">
+				<ul class="nav nav-pills col-md-12 justify-content-center align-items-center" id="myTab" role="tablist">
+  				<li class="nav-item" role="presentation">
+    				<button class="nav-link active" id="burger-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Торты</button>
+  				</li>
+  				<li class="nav-item" role="presentation">
+    				<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Десерты</button>
+  				</li>
+  				<li class="nav-item" role="presentation">
+    				<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Эклеры</button>
+  				</li>
+  				<li class="nav-item" role="presentation">
+    			<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Пироги</button>
+  				</li>
+  				<li class="nav-item" role="presentation">
+    				<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Выпечка</button>
+  				</li>
+				</ul>
+			</div>
+<!--......PRODUCTS content slider......-->	
+			<div class="tab-content" id="myTabContent">
+<!--......PRODUCTS Комбинированные......-->	
+  			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="burger-tab">
+  		 		<div class="swiper-products">
+    				<div class="swiper-wrapper">
+
+<!--......PRODUCTS Комбинированные/Slide1......-->	
+      				<div class="swiper-slide">
+								<div class="products-item">
+									<div class="product__element">
+										<div class="d-flex justify-content-center item-pic">
+											<img src="img/menu/item_1_1.png" class="img-fluid align-self-center" alt="">
+										</div>
+										<div class="products__info">
+										<h4 class="products-item__title">«Наполеон» с ягодой</h4>	
+										<div class="products-item__info">Готовим из слоеного теста с ванильно-сливочным заварным кремом с мороженым пломбир и украшаем свежей ягодой.</div>					
+										<div class="product-buy">
+											<div class="product__prices">				
+												<div class="product__price">375 грн <span>/кг</span></div>
+												<div class="product__price-old d-none">2900 грн</div>
+											</div>
+											<div class="product__quantity"></div>										
+											<button class="product__add-to-cart-button" data-sb-id-or-vendor-code="002" data-sb-product-name="Афганский Казан Комбинированный 5 л" data-sb-product-price="245" data-sb-product-quantity="1" data-sb-product-img="http://jess.com.ua/img/menu/2_png.png">
+												<img src="img/menu/buy.svg" alt="">
+											</button>	
+											</div>
+										</div>
+										</div>					
+								</div>
+      				</div>
+<!--......PRODUCTS Комбинированные/Slide2......-->
+      				<div class="swiper-slide">
+								<div class="products-item">
+									<div class="product__element">
+										<div class="d-flex justify-content-center item-pic">
+											<img src="img/menu/item_1_2.png" class="img-fluid align-self-center" alt="">
+										</div>
+										<div class="products__info">
+										<h4 class="products-item__title">«Наполеон» с ягодой</h4>	
+										<div class="products-item__info">Готовим из слоеного теста с ванильно-сливочным заварным кремом с мороженым пломбир и украшаем свежей ягодой.</div>					
+										<div class="product-buy">
+											<div class="product__prices">				
+												<div class="product__price">375 грн <span>/кг</span></div>
+												<div class="product__price-old d-none">2900 грн</div>
+											</div>
+											<div class="product__quantity"></div>										
+											<button class="product__add-to-cart-button" data-sb-id-or-vendor-code="002" data-sb-product-name="Афганский Казан Комбинированный 5 л" data-sb-product-price="245" data-sb-product-quantity="1" data-sb-product-img="http://jess.com.ua/img/menu/2_png.png">
+												<img src="img/menu/buy.svg" alt="">
+											</button>	
+											</div>
+										</div>
+										</div>					
+								</div>
+      				</div>
+<!--......PRODUCTS Комбинированные/Slide3......-->      				
+      				<div class="swiper-slide">
+								<div class="products-item">
+									<div class="product__element">
+										<div class="d-flex justify-content-center item-pic">
+											<img src="img/menu/item_1_3.png" class="img-fluid align-self-center" alt="">
+										</div>
+										<div class="products__info">
+										<h4 class="products-item__title">«Наполеон» с ягодой</h4>	
+										<div class="products-item__info">Готовим из слоеного теста с ванильно-сливочным заварным кремом с мороженым пломбир и украшаем свежей ягодой.</div>					
+										<div class="product-buy">
+											<div class="product__prices">				
+												<div class="product__price">375 грн <span>/кг</span></div>
+												<div class="product__price-old d-none">2900 грн</div>
+											</div>
+											<div class="product__quantity"></div>										
+											<button class="product__add-to-cart-button" data-sb-id-or-vendor-code="002" data-sb-product-name="Афганский Казан Комбинированный 5 л" data-sb-product-price="245" data-sb-product-quantity="1" data-sb-product-img="http://jess.com.ua/img/menu/2_png.png">
+												<img src="img/menu/buy.svg" alt="">
+											</button>	
+											</div>
+										</div>
+										</div>					
+								</div>
+      				</div>
+<!--......PRODUCTS Комбинированные/Slide4......-->     				
+      			<div class="swiper-slide">
+								<div class="products-item">
+									<div class="product__element">
+										<div class="d-flex justify-content-center item-pic">
+											<img src="img/menu/item_1_4.png" class="img-fluid align-self-center" alt="">
+										</div>
+										<div class="products__info">
+										<h4 class="products-item__title">«Наполеон» с ягодой</h4>	
+										<div class="products-item__info">Готовим из слоеного теста с ванильно-сливочным заварным кремом с мороженым пломбир и украшаем свежей ягодой.</div>					
+										<div class="product-buy">
+											<div class="product__prices">				
+												<div class="product__price">375 грн <span>/кг</span></div>
+												<div class="product__price-old d-none">2900 грн</div>
+											</div>
+											<div class="product__quantity"></div>										
+											<button class="product__add-to-cart-button" data-sb-id-or-vendor-code="002" data-sb-product-name="Афганский Казан Комбинированный 5 л" data-sb-product-price="245" data-sb-product-quantity="1" data-sb-product-img="http://jess.com.ua/img/menu/2_png.png">
+												<img src="img/menu/buy.svg" alt="">
+											</button>	
+											</div>
+										</div>
+										</div>					
+								</div>
+      				</div>
+<!--......PRODUCTS Комбинированные/Slide5......-->
+      				<div class="swiper-slide">
+								<div class="products-item">
+									<div class="product__element">
+										<div class="d-flex justify-content-center item-pic">
+											<img src="img/menu/item_1_1.png" class="img-fluid align-self-center" alt="">
+										</div>
+										<div class="products__info">
+										<h4 class="products-item__title">«Наполеон» с ягодой</h4>	
+										<div class="products-item__info">Готовим из слоеного теста с ванильно-сливочным заварным кремом с мороженым пломбир и украшаем свежей ягодой.</div>					
+										<div class="product-buy">
+											<div class="product__prices">				
+												<div class="product__price">375 грн <span>/кг</span></div>
+												<div class="product__price-old d-none">2900 грн</div>
+											</div>
+											<div class="product__quantity"></div>										
+											<button class="product__add-to-cart-button" data-sb-id-or-vendor-code="002" data-sb-product-name="Афганский Казан Комбинированный 5 л" data-sb-product-price="245" data-sb-product-quantity="1" data-sb-product-img="http://jess.com.ua/img/menu/2_png.png">
+												<img src="img/menu/buy.svg" alt="">
+											</button>	
+											</div>
+										</div>
+										</div>					
+								</div>
+      				</div>
+<!--......PRODUCTS Комбинированные/Slide6......-->      				
+      				<div class="swiper-slide">
+								<div class="products-item">
+									<div class="product__element">
+										<div class="d-flex justify-content-center item-pic">
+											<img src="img/menu/item_1_1.png" class="img-fluid align-self-center" alt="">
+										</div>
+										<div class="products__info">
+										<h4 class="products-item__title">«Наполеон» с ягодой</h4>	
+										<div class="products-item__info">Готовим из слоеного теста с ванильно-сливочным заварным кремом с мороженым пломбир и украшаем свежей ягодой.</div>					
+										<div class="product-buy">
+											<div class="product__prices">				
+												<div class="product__price">375 грн <span>/кг</span></div>
+												<div class="product__price-old d-none">2900 грн</div>
+											</div>
+											<div class="product__quantity"></div>										
+											<button class="product__add-to-cart-button" data-sb-id-or-vendor-code="002" data-sb-product-name="Афганский Казан Комбинированный 5 л" data-sb-product-price="245" data-sb-product-quantity="1" data-sb-product-img="http://jess.com.ua/img/menu/2_png.png">
+												<img src="img/menu/buy.svg" alt="">
+											</button>	
+											</div>
+										</div>
+										</div>					
+								</div>
+      				</div>
+<!--......PRODUCTS Комбинированные/Slide7......-->      				
+      				<div class="swiper-slide">
+								<div class="products-item">
+									<div class="product__element">
+										<div class="d-flex justify-content-center item-pic">
+											<img src="img/menu/item_1_1.png" class="img-fluid align-self-center" alt="">
+										</div>
+										<div class="products__info">
+										<h4 class="products-item__title">«Наполеон» с ягодой</h4>	
+										<div class="products-item__info">Готовим из слоеного теста с ванильно-сливочным заварным кремом с мороженым пломбир и украшаем свежей ягодой.</div>					
+										<div class="product-buy">
+											<div class="product__prices">				
+												<div class="product__price">375 грн <span>/кг</span></div>
+												<div class="product__price-old d-none">2900 грн</div>
+											</div>
+											<div class="product__quantity"></div>										
+											<button class="product__add-to-cart-button" data-sb-id-or-vendor-code="002" data-sb-product-name="Афганский Казан Комбинированный 5 л" data-sb-product-price="245" data-sb-product-quantity="1" data-sb-product-img="http://jess.com.ua/img/menu/2_png.png">
+												<img src="img/menu/buy.svg" alt="">
+											</button>	
+											</div>
+										</div>
+										</div>					
+								</div>
+      				</div>   				
+      	</div>
+<!-- Add Pagination to PRODUCTS Комбинированные -->
+						<div class="swiper-button-next"></div>
+			      <div class="swiper-button-prev"></div>
+    					<div class="swiper-pagination"></div>
+    				</div>
+    			</div>
+
+
+<!--......PRODUCTS Полированные......-->
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  	  		 <div class="swiper">
+    <div class="swiper-wrapper">
+      
+      <div class="swiper-slide">
+
+
+
+      </div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  </div>
+</div>
+		</section>
+	</div>
+<!--......GALLERY......-->
+<div class="container">
+	<section class="cakes-gallery" id="cakes-gallery">
+		<div class="row">
+				<div class="col-md-2"></div>
+					<div class="col-md-8 col-sm-12 col-xs-12">
+						<h3 class="gallery__title">Интересно про нас</h3>
+						<p class="gallery__slogan">Наши сладости приносят радость и эмоции на весь день! <br>Используем только качественные продукты.</p> 
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+  		 <div class="swiper">
+		    <div class="swiper-wrapper">
+		      <div class="swiper-slide images mb-5">
+		      	<div class="row justify-content-between">
+		      				<div class="col-6">
+										<div class="gallery thumb">
+											<a data-fancybox="gallery" href="img/gallery/photo_1.png">
+												<img src="img/gallery/photo_1.png" class="img-fluid"></a>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="row">
+											<div class="col-6 mb-30">
+												<div class="gallery thumb">
+													<a data-fancybox="gallery" href="img/gallery/photo_2.png">
+														<img src="img/gallery/photo_2.png" class="img-fluid"></a>
+												</div>
+											</div>					
+												<div class="col-6 mb-30">
+													<div class="gallery thumb">
+													<a data-fancybox="gallery" href="img/gallery/photo_2.png">
+														<img src="img/gallery/photo_2.png" class="img-fluid"></a>
+												</div>
+											</div>
+																		
+												<div class="col-12">
+													<div class="gallery thumb">
+													<a data-fancybox="gallery" href="img/gallery/photo_4.png">
+														<img src="img/gallery/photo_4.png" class="img-fluid"></a>
+												</div>
+											</div>
+										</div>	
+										</div>																	
+							</div>
+		      </div>
+		      <div class="swiper-slide">Slide 2</div>
+		      <div class="swiper-slide">Slide 3</div>
+		      <div class="swiper-slide">Slide 4</div>
+		      <div class="swiper-slide">Slide 5</div>
+		      
+		    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+</div>
+<!--......RECEPIES......-->
+<section class="recipes">
+	<div class="container-wide-recipes">	
+		<img src="img/preparation/" class="paper-gallery-recipes img-fluid" alt="">
+			<div class="container recipes__bg">
+				<div class="row">
+					<div class="col-md-5 col-12 recipe">
+						<h3 class="recipes__title">Смотри сюда!</h3>
+						<p class="recipes__text">За 120 секунд покажем Вам как мы готовим <br>самые вкусные тортики в Киеве!</p> 
+					</div>
+					<div class="col-md-7 col-12">
+						<img src="img/recepies/recipe_girl.png" class="img-fluid recepies-chef" alt="">
+					</div>			
+			</div>
+		</div>
+	</div>
+</section>
+<!-- INFORMATION -->
+<section class="inform" id="info">
+							<div class="container">
+								<div class="inform__title">Заказать легко</div>
+								<div class="inform__slogan">Наши сладости приносят радость и эмоции на весь день!<br> Используем только качественные продукты.</div>
+								<div class="row">
+									<div class="col-3">
+										<div class="delivery-item">
+											<div class="d-flex justify-content-center delivery-item-bg">
+												<div class="delivery-item__number">1</div>
+												<img src="img/info/info_1.png" class="img-fluid align-self-center mt--50" alt="">
+											</div>
+											<h4 class="delivery-item__title">Заказ на сайте</h4>	
+										<div class="delivery-item__info">Оформите заказ на сайте или позвоните нам</div>		
+										</div>								
+									</div>
+									<div class="col-3">
+										<div class="delivery-item">
+											<div class="d-flex justify-content-center delivery-item-bg">
+												<div class="delivery-item__number">2</div>
+												<img src="img/info/info_2.png" class="img-fluid align-self-center mt--25" alt="">
+											</div>
+											<h4 class="delivery-item__title">Оплата</h4>	
+										<div class="delivery-item__info">Оплатите онлайн через сайт или курьеру наличными</div>		
+										</div>								
+									</div>
+									<div class="col-3">
+										<div class="delivery-item">
+											<div class="d-flex justify-content-center delivery-item-bg">
+												<div class="delivery-item__number">3</div>
+												<img src="img/info/info_3.png" class="align-self-center mt--25" alt="">
+											</div>
+											<h4 class="delivery-item__title">Доставка</h4>	
+										<div class="delivery-item__info">Вжуу-уух и мы уже у вас под подьездом</div>		
+										</div>								
+									</div>
+									<div class="col-3">
+										<div class="delivery-item">
+											<div class="d-flex justify-content-center delivery-item-bg">
+												<div class="delivery-item__number">4</div>
+												<img src="img/info/info_4.png" class="img-fluid align-self-center mt--50" alt="">
+											</div>
+											<h4 class="delivery-item__title">Приятного</h4>	
+										<div class="delivery-item__info">А вот и не слипнется!Мы проверяли ;)</div>		
+										</div>								
+									</div>
+								
+								</div>
+							</div>
+</section>
+
+
+<!--......REVIEWS......-->
+<section class="reviews" id="reviews">
+	<div class="container">
+		<div class="reviews__title">Отзывы сладкоежек</div>
+			<div class="reviews__slogan">Как наши клиенты хвалят нашу работу и мы становимся
+только лучше и довольнее после этих отзывов</div>
+<!-- REVIEWS Swiper -->
+  <div class="swiper-reviews">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+					<div class="d-flex align-items-stretch">
+						<div class="review">
+							<div class="quote">
+									<img src="img/reviews/quotes.svg" class="img-fluid" alt="">
+								</div>
+								<div class="review__creator">Юлия, г. Киев</div>
+								<div class="review__title">Очень вкусно! Не слиплось)</div>
+								<div class="review__text">вот и наступил момент, когда я напишу отзыв. Неделю выбирал себе генератор на загородную стройку. Купил Matari MX7000E. Уже с месяц молотит, без нареканий, хоть и  эта модель как генератор для дома.
+Да, и это только начало. Есть еще перспектива купить что-то помощнее для компании и еще какой-то водяной текст
+ну так сказать, чтобы был. Советую!</div>
+								</div>
+							</div>
+      	</div>
+      	<div class="swiper-slide">
+      		<div class="d-flex align-items-stretch">
+						<div class="review">
+							<div class="quote">
+								<img src="img/reviews/quotes.svg" class="img-fluid" alt="">
+							</div>
+							<div class="review__creator">Владимир Бойко, Шулявка</div>
+							<div class="review__title">Мега стильный  тортик получили!</div>
+							<div class="review__text">вот и наступил момент, когда я напишу отзыв. Неделю выбирал себе генератор на загородную стройку. Купил Matari MX7000E. Уже с месяц молотит, без нареканий, хоть и  эта модель как генератор для дома.
+Да, и это только начало. Есть еще перспектива купить что-то помощнее для компании и еще какой-то водяной текст
+ну так сказать, чтобы был. Советую!</div>
+							
+							</div>
+						</div>
+      </div>
+      <div class="swiper-slide">
+      	<div class="d-flex align-items-stretch">
+      	<div class="review">
+						<div class="quote">
+							<img src="img/reviews/quotes.svg" class="img-fluid" alt="">
+						</div>
+						<div class="review__creator">Ольга, г. Одесса</div>
+						<div class="review__title">Отличный казан купила!</div>
+						<div class="review__text">Оригинальный дизайн и форма, качественное исполнение, удобная винтовая ручка, не очень большой вес,функционально, позволяет сократить время приготовления пищи, оптимальный объем, наличие клапанов для безопасности, можно брать в походы на природу. Рекомендую!</div>
+						<div class="riview__date">31 декабря 2020</div>
+						</div>	
+					</div>
+      </div>
+      <div class="swiper-slide">
+      	<div class="d-flex align-items-stretch">
+						<div class="review">
+								<div class="quote">
+									<img src="img/reviews/quotes.svg" class="img-fluid" alt="">
+								</div>
+								<div class="review__creator">Владимир Бойко, г Киев</div>
+								<div class="review__title">Получается очень вкусно!</div>
+								<div class="review__text">Казан отличный! Есть такой у друга, так он его всегда на рыбалку берет, уха получается ооочень вкусная. Вещь в хозяйстве нужная. Можно что угодно приготовить и очень быстро. Теперь вот и я буду тестировать. Но уже по упаковке и внешнему виду видно что вещь качественная. Продавец по моему запросу показал все документы.</div>
+								<div class="riview__date">18 апреля 2020</div>
+							</div>
+						</div>
+      		</div>
+      
+      
+    </div>
+<!-- Add Pagination to reviews -->
+    <div class="swiper-pagination" id="swiper-pg"></div>
+  </div>			
+</section>
+
+
+
+
+
+<section class="certificate">
+	<div class="container">
+		<div class="certificate__title">Сертификат дилера</div>
+		<div class="certificate__slogan">Exclusive distributor in Ukraine for the products <br>of RASHKO BABA Steel Tools Company.</div>
+		<div class="row">
+				<img src="img/certificate/certificate.png" class="img-fluid" alt="">
+		</div>
+	</div>
+</section>
+
+<!--......MAP......-->	
+<section class="map">
+	<div id='map'>
+			<img src="img/preparation/paper_1.svg" class="img-fluid paper-certificate-map" alt="">						
+				<div class="contacts">
+									<div class="contacts__title mb-3">Контакты</div>
+									<div class="contacts__tel">
+										<img src="img/map/tel.svg" alt="img">+ 38 (044) 855-85-35 
+									</div>
+									<div class="contacts__tel">
+										<img src="img/map/tel.svg" alt="img">+ 38 (044) 855-85-35
+									</div>
+									<div class="contacts__tel">
+										<img src="img/map/tel.svg" alt="img">+ 38 (044) 855-85-35
+									</div>
+										<div class="contacts__text">Звоните нам с понедельника до понедельника с 09:00 до 20:00</div>
+									<div class="contacts__tel mt-4">
+										<img src="img/map/loc.svg" alt="img">г. Киев, ул. Щедрина, 28
+									</div>
+										<div class="contacts__text">Будем рады видеть Вас у нас нас в магазине</div>
+									<div class="contacts__tel mt-4">
+										<img src="img/map/let.svg" alt="img">info@afgankazan.kiev.ua
+									</div>
+								</div>
+							</div>
+					</section>
+
+</main>
+<!--......FOOTER......-->
+<img src="img/footer/paper.svg" class="img-fluid paper-map-footer" alt="">
+<footer class="footer">
+	<div class="container">
+		<div class="footer-wrap">	
+			<div class="row">	
+				<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block">
+					<div class="container-fluid">
+						<a class="navbar-brand mr-250" href="#">АФГАН <br>КАЗАН <br> КИЕВ</a>				
+						<div class="collapse navbar-collapse" id="collapsibleNavbar">				
+							<ul class="navbar-nav">
+								<li class="nav-item mr-30">
+									<a class="nav-link" href="#products">Каталог</a>
+								</li>
+								<li class="nav-item mr-30">
+									<a class="nav-link" href="#how-to-prepare">О нас</a>
+								</li>
+								<li class="nav-item mr-30">
+									<a class="nav-link" href="#reviews">Отзывы</a>
+								</li> 
+								<li class="nav-item mr-200">
+									<a class="nav-link" href="#map">Контакты</a>
+								</li>
+								<li class="nav-item">
+									<a href="#" target="_blank">
+				            <i class="fa fa-facebook" aria-hidden="true"></i>
+				            </a>
+								</li>
+								<li class="nav-item">
+									<a href="#" target="_blank">
+				             <i class="fa fa-vk" aria-hidden="true"></i>
+				          </a>
+								</li>
+								<li class="nav-item">
+									<a href="#" target="_blank">
+				            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+				          </a>
+						</li>
+						<li class="nav-item">
+									<a href="#" target="_blank">
+				            <i class="fa fa-twitter" aria-hidden="true"></i>
+				          </a>
+								</li>
+					</ul>						
+				</div>  
+			</div>	
+		</nav>
+	</div>
+
+	<div class="created-by row">
+		<div class="created-by__copyrigh col-sm-4 col-6 d-flex align-items-center">© AFGANKAZAN, 2021 — Афганские казаны в Украине</div>
+			<div class="col-sm-4 col-6 align-self-center">
+				<div class="created-by__designer">Дизайн и верстка — Brezdins Studio</div>
+					<div class="created-by__htmlcoder"></div>
+			</div>
+			<div class="write_us col-sm-4 col-12 d-flex justify-content-end">
+					<a class="button button_theme_write-us" href="#" data-toggle="modal" data-target="#exampleModalCenter">Заказать звонок</a>
+			</div>
+	</div>
+</div>
+</div>
+</footer>
+
+<!--......SCRIPTS......-->
+<!-- Отдельные JS для Popper и Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+<!-- Bootstrap для формы -->
+<!-- jQuery -->
+	<script src="js/jquery-1.10.2.min.js"></script>
+	
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+	
+<!-- Bootstrap Form Helpers для формы обратного звонка-->
+<script src="js/bootstrap-formhelpers.min.js"></script>
+<!-- Fancy box gallery -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<!-- Swiper JS -->
+  <script src="./js/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper general/gallery-->
+  <script>
+    var swiper = new Swiper('.swiper', {
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        
+      }
+    });
+  </script>
+<!-- Initialize Swiper Products-->
+  <script>
+    var swiper = new Swiper('.swiper-products', {
+			
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        
+      },
+
+      	   breakpoints: {
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 5,
+        },
+				992: {
+          slidesPerView: 3,
+          spaceBetween: 5,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        576: {
+          slidesPerView: 1,
+          spaceBetween: 60,
+        },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 60,
+        }
+      }
+    });
+  </script>
+<!-- Initialize Swiper Reviews-->
+<script>
+    var swiper = new Swiper('.swiper-reviews', {
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      },
+      	   breakpoints: {
+        1200: {
+          slidesPerView: 2,
+          spaceBetween: 5,
+        },
+				992: {
+          slidesPerView: 2,
+          spaceBetween: 5,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        576: {
+          slidesPerView: 1,
+          spaceBetween: 60,
+        },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 60,
+        }
+      }
+    });
+  </script>
+
+ 
+  <div class="smart-basket__wrapper"></div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="./js/smartbasket.min.js"></script>
+	<script>
+		$(function () {
+			$('.smart-basket__wrapper').smbasket({
+				productElement: 'product__element',
+				buttonAddToBasket: 'product__add-to-cart-button',
+				
+				
+				productQuantityWrapper: 'product__quantity',
+				smartBasketMinArea: 'header__basket-min',
+				countryCode: '+38',
+				smartBasketCurrency: 'грн',
+				smartBasketMinIconPath: './img/header/shopping-basket-wight.svg',
+
+				agreement: {
+					isRequired: true,
+					isChecked: true,
+					
+				},
+				nameIsRequired: false,
+			});
+		});
+	</script>
+  
+ 
+<!-- Initialize Map -->
+  <script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoibGlsaWEta3VrIiwiYSI6ImNrb3UwZXpmdjBieHoyb21xMGs0azB1YWgifQ.hHoJVbDYP7HRGcklMRdQow';
+var monument = [30.47, 50.48];
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/dark-v10',
+center: [30.47719349, 50.48012848], // starting position [lng, lat]
+zoom: 15
+});
+ 
+// create the popup
+var popup = new mapboxgl.Popup({ offset: 25 }).setText(
+'Afgan Kazan...'
+);
+ 
+// create DOM element for the marker
+var el = document.createElement('div');
+el.id = 'marker';
+ 
+// create the marker
+new mapboxgl.Marker(el)
+.setLngLat(monument)
+.addTo(map);
+</script>
+<script>
+	$("#smart-basket__alert-wrapper").on("show", function () {
+  $("body").addClass("modal-open");
+}).on("hidden", function () {
+  $("body").removeClass("modal-open")
+});
+</script>
+<!-- WOW animte JS -->
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+</body>
+</html>
